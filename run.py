@@ -10,8 +10,17 @@ if (len(sys.argv) >= 3):
     appid = sys.argv[1]
     appsec = sys.argv[2]
 
-leancloud.init(appid, appsec)
+leancloud.init(appid, master_key=appsec)
 comment=Comment()
-comment.set('comment','wakeup')
+comment.set('comment','waaaaaaakeup')
+comment.set('mail','test@test.cn')
 comment.save()
 print("唤醒完毕")
+time.sleep(10)
+Comment = leancloud.Object.extend('Comment')
+query.equal_to('comment','waaaaaaakeup')
+query = Comment.query
+reslist=query.find()
+for item in reslist:
+    item.destroy()
+print("唤醒评论清除完毕")
