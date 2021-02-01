@@ -10,6 +10,8 @@
 2. 添加一个名为`GITHUB_TOKEN`的Token，并为赋予`repo`，`admin:repo_hook` ， `workflow`的权限
 3. 添加名为`APPID` `APPSECRETS`的Secrets，内容为自己的LeanCloud的AppID和*MasterKey*，需要MasterKey的原因是要删除评论，保存在Github的Secrets中不会泄露，因此可以放心使用
 
+详细使用方法见：https://hiram.wang/leancloud-timer-github-actions/
+
 ## 修改时间
 
 修改时间直接修改`/.github/workflows/autoWakeup.yml`文件的cron表达式即可。
@@ -18,7 +20,7 @@
 
 ## 优雅执行
 
-默认fork后是每天8点到晚上11:59执行的。并且每次执行都会push新的记录。当然你可以删掉。
+默认fork后是每天早上7点执行。并且每次执行都会push新的记录。当然你可以删掉。
 
 这里提供两种运行思路，请各位博主自行决定如何运行。
 
