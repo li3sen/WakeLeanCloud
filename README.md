@@ -1,14 +1,13 @@
 ## 这是干嘛的？
 
 这个项目主要是用来解决LeanCloud通过定时任务唤醒机器时被流控的问题。
+这个项目基于blogimg/WakeLeanCloud修改而成，和原项目的主要区别在于其是通过发表`wakeup`评论来唤醒，解决了需要绑定域名的问题
 
 ## 如何使用
 
 1. Fork此项目
 2. 添加一个名为`GITHUB_TOKEN`的Token，并为赋予`repo`，`admin:repo_hook` ， `workflow`的权限
-3. 添加名为`SITE`的Secrets，内容为自己管理后台地址。多个请用英文逗号分隔
-
-详细教程请参考[优雅解决LeanCloud流控问题](https://www.antmoe.com/posts/ff6aef7b/index.html#开始尝试)
+3. 添加名为`APPID` `APPSECRETS`的Secrets，内容为自己的LeanCloud的Key
 
 ## 修改时间
 
