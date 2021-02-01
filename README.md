@@ -8,7 +8,7 @@
 
 1. Fork此项目
 2. 添加一个名为`GITHUB_TOKEN`的Token，并为赋予`repo`，`admin:repo_hook` ， `workflow`的权限
-3. 添加名为`APPID` `APPSECRETS`的Secrets，内容为自己的LeanCloud的Key
+3. 添加名为`APPID` `APPSECRETS`的Secrets，内容为自己的LeanCloud的AppID和*MasterKey*，需要MasterKey的原因是要删除评论，保存在Github的Secrets中不会泄露，因此可以放心使用
 
 ## 修改时间
 
