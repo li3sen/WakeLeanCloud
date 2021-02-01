@@ -18,8 +18,8 @@ comment.save()
 print("唤醒完毕")
 time.sleep(10)
 Comment = leancloud.Object.extend('Comment')
-query.equal_to('comment','waaaaaaakeup')
 query = Comment.query
+query.equal_to('comment','waaaaaaakeup')
 reslist=query.find()
 for item in reslist:
     item.destroy()
