@@ -10,7 +10,7 @@ on:
   #  branches: 
   #    - master
   schedule:
-    - cron: "*/18 0-15 * * *"
+    - cron: "00 23 * * *"
   watch:
     types: [started]
    
@@ -28,11 +28,15 @@ jobs:
     - name: Install requests #安装requests
       run: |
         pip install requests
+    - name: Install leancloud #安装leancloud
+      run: |
+        pip install leancloud
     - name: Waking  #读取站点信息
       env: 
-        $CONFIG_SITE: ${{ secrets.Site }} # 读取评论后台地址
+        $CONFIG_APPID: ${{ secrets.APPID }}
+        $CONFIG_APPSECRET: ${{ secrets.APPSECRET }}
       run: | 
-        python run.py ${{ secrets.Site }}
+        python run.py ${{ secrets.APPID }} ${{ secrets.APPSECRET }}
         echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
     - name: Commit #更新日志到GitHub仓库
       run: |
